@@ -1,10 +1,3 @@
----
-output: 
-  html_document: 
-    fig_height: 15
-    fig_width: 20
----
-
 # pipelines
 
 `pipelines` is a R package for performing different sorts of exploratory analyses on omics data sets.
