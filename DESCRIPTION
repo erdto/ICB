@@ -1,0 +1,16 @@
+Package: pipelines
+Title: Functions to perform exploratory analysis of high throughput omics data.
+Version: 0.0.0.9000
+Authors@R: person(given = "Tore", family = "Erdmann", email = "tore.erdmann@@gmail.com", role = c("aut", "cre"))
+Description: Pipelines for pairwise group comparisons, overall test for more that 2 groups and testing influence of continuous predictors.
+Depends: R (>= 3.2.2)
+License: CC0
+LazyData: true
+Author: Tore Erdmann <tore.erdmann@gmail.com> [aut, cre]
+Maintainer: Tore Erdmann <tore.erdmann@gmail.com>
+Imports: XLConnect, ggplot2, survival, parallel, readxl, dplyr, checkmate
+Suggests: testthat,
+    knitr,
+    rmarkdown
+Encoding: UTF-8
+VignetteBuilder: knitr
