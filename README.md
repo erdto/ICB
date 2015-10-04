@@ -1,3 +1,9 @@
+---
+output: 
+  html_document: 
+    fig_height: 15
+    fig_width: 20
+---
 
 # pipelines
 
@@ -28,4 +34,12 @@ pipeline_pairwise(data = metdata, groups = groups,
                   compname = "demo_pairwise",
                   vargroups = vargroups,
                   covars = covariates)
+
+# The output is saved in an excel file and plots in pdfs in the working directory.
 ```
+
+## Volcano Plot
+As a visual summary, among the saved pdfs are volcano plots for each combination of groups.
+The observations beyond the cutoff lines in x and y direction can be considered worth to further investigate.
+
+![plot1](figure/readme_volcano.pdf) 
