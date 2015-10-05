@@ -31,6 +31,8 @@ pipeline_pairwise(data = metdata, groups = groups,
 # The output is saved in an excel file and plots in pdfs in the working directory.
 ```
 
+For further help, look into the vignette or the help pages with ?pipeline_pairwise.
+
 ## Volcano Plot
 As a visual summary, among the saved pdfs are volcano plots for each combination of groups.
 The observations beyond the cutoff lines in x and y direction can be considered worth to further investigate.
