@@ -51,7 +51,7 @@ pipeline_continuous <- function(data, predictors, compname,
                                 ncores = 1) {
   
   test <- match.arg(test)
-  checkDataFrame(data, types = "numeric", all.missing = TRUE)
+  checkmate::assertDataFrame(data, types = "numeric", all.missing = TRUE)
   vars <- data
   varnames <-  names(data)
   covarnames <- names(covars)
@@ -59,7 +59,7 @@ pipeline_continuous <- function(data, predictors, compname,
   predictors <- as.data.frame(predictors)
   
   vargroups <- na.exclude(vargroups)
-  vncols <- ncol(vargroups)
+  vncols <- NCOL(vargroups)
   
   if(ratios == TRUE & no_plots == FALSE)
     warning(paste("Warning, ratios = TRUE and no_plots = FALSE, this could take a while!", "\n",
@@ -225,8 +225,10 @@ pipeline_continuous <- function(data, predictors, compname,
         
         pdf(paste(compname, "_", prednames[i], "_", "volcano", 
                   if(vloop!=0){paste("_", colnames(vargroups)[vloop])},".pdf", sep=""))
-        volc_args
-        print_volc(datframe = results, volc_args = volc_args)
+        # remove rows where predictor and inputvar are the same with
+        # !as.character(datframe[,1]) == as.character(datframe[,2])
+        print_volc(datframe = results[!as.character(results[,1]) == as.character(results[,2]),], 
+                   volc_args = volc_args)
         dev.off()
       } else {
         paste("Omitted volcano for predictor: ", i)

@@ -150,7 +150,6 @@ print_volc <- function(datframe, volc_args) {
       ggplot2::ylab("-log10(p-value)") +
       ggplot2::scale_colour_manual(values = cols) +
       ggplot2::scale_fill_manual(values = cols)
-    
   )
   # annotate points beyond the significance lines
   set_na <- !is.na(datframe$pvalue) & datframe$threshold == TRUE

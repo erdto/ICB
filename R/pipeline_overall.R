@@ -16,7 +16,7 @@
 #' @param ratios [logical] Should ratios of the metabolites be computed an tested? Will quickly lead to long runtimes.
 #' @param ratioop [character] Should ratios be computed by "subtract"ing the metabolite values (for logarithmic data) or by "divide"ing?
 #' @return Returns NULL, all output (excel file, pdf with boxplots and volcano plots) is saved into the working directory.
-#'
+#' @export
 pipeline_overall<-  function(data, 
                              groups,
                              refcat, #reference category (control group)
@@ -61,7 +61,7 @@ pipeline_overall<-  function(data,
   ####################
   
   vars <- data
-  vncols <- ncol(vargroups)
+  vncols <- NCOL(vargroups)
   ratio_args
   ratios <- ratio_args$ratios
   test <- match.arg(test)
